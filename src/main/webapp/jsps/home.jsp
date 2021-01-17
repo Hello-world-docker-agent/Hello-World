@@ -8,6 +8,6 @@
 </head>
 </head>
 <body>
-	<h1>Hello World Web Application deployed from master branch docker agent</h1>
+	<h1>Hello World Web Application deployed from master branch docker agent commit</h1>
 </body>
 </html>
