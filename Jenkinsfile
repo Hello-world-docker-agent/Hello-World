@@ -5,7 +5,7 @@ node ('docker-agent') {
     
     stage ("Git clone") {
         
-        git url: "https://github.com/repo01/maven-web-application.git", brach: "master"
+        git url: "https://github.com/repo01/maven-web-application.git", brach: "develop"
     }
     
     stage("Maven Package") {
@@ -15,7 +15,7 @@ node ('docker-agent') {
     
     stage("Creation of Docker Image") {
         
-        sh "docker build -t geethika609/hello-world:${buildNumber} ."
+        sh "docker build -t geethika609/hello-world-dev:${buildNumber} ."
     }
     
     stage("Docker login and push") {
@@ -30,8 +30,8 @@ node ('docker-agent') {
         
         sshagent(['Docker_Server_SSH']) {
             
-            sh "ssh -o StrictHostKeyChecking=no ubuntu@15.206.100.141 docker rm -f helloworld || true"
-            sh "ssh -o StrictHostKeyChecking=no ubuntu@15.206.100.141 docker run -d -p 8080:8080 --name helloworld geethika609/hello-world:${buildNumber}"
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@15.206.100.141 docker rm -f helloworlddev || true"
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@15.206.100.141 docker run -d -p 8080:8080 --name helloworld geethika609/hello-world-dev:${buildNumber}"
         }
     }
     
