@@ -5,7 +5,7 @@ node ('docker-agent') {
     
     stage ("Git clone") {
         
-        git 'https://github.com/Hello-world-docker-agent/Hello-World.git'
+        git branch: 'master','https://github.com/Hello-world-docker-agent/Hello-World.git'
     }
     
     stage("Maven Package") {
