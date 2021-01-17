@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>hello-world</artifactId>
+	<artifactId>hello-world-dev</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<name>hello-world</name>
+	<name>hello-world-dev</name>
 
 	<description>Hello World Project</description>
 
@@ -89,7 +89,7 @@
 	
 	
 	<build>
-		<finalName>hello-world</finalName>
+		<finalName>hello-world-dev</finalName>
 		
 		<plugins>
 			<plugin>
@@ -109,7 +109,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/hello-world</contextPath>
+						<contextPath>/hello-world-dev</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
@@ -122,7 +122,7 @@
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
-					<wtpContextName>hello-world</wtpContextName>
+					<wtpContextName>hello-world-dev</wtpContextName>
 				</configuration>
 			</plugin>
 			
