@@ -5,7 +5,7 @@ node ('docker-agent') {
     
     stage ("Git clone") {
         
-        git url: "https://github.com/repo01/maven-web-application.git", brach: "develop"
+        git url: "https://github.com/Hello-world-docker-agent/Hello-World.git", brach: "develop"
     }
     
     stage("Maven Package") {
@@ -23,7 +23,7 @@ node ('docker-agent') {
         withCredentials([string(credentialsId: 'DockerHubPwd', variable: 'DockerHubPwd')]) {
             sh "docker login -u geethika609 -p ${DockerHubPwd}"
         }
-        sh "docker push geethika609/hello-world:${buildNumber}"
+        sh "docker push geethika609/hello-world-dev:${buildNumber}"
     }
     
     stage("Deploy Application as Docker container in Docker Deployment Server") {
