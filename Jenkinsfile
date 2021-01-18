@@ -30,8 +30,8 @@ node ('docker-agent') {
         
         sshagent(['Docker_Server_SSH']) {
             
-            sh "ssh -o StrictHostKeyChecking=no ubuntu@52.66.211.183 docker rm -f helloworld || true"
-            sh "ssh -o StrictHostKeyChecking=no ubuntu@52.66.211.183 docker run -d -p 8080:8080 --name helloworld geethika609/hello-world:${buildNumber}"
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@65.0.98.131 docker rm -f helloworld || true"
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@65.0.98.131 docker run -d -p 8080:8080 --name helloworld geethika609/hello-world:${buildNumber}"
         }
     }
     
